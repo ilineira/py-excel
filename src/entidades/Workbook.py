@@ -34,15 +34,9 @@ class Workbook:
         hoja = self.planilla.get_sheet_by_name(inicialDeCiudad.upper())
         fila = hoja.max_row
         for key, value in self.columnas.items():
-            hoja['{}{}'.format(value, fila+1)] = eval('persona.get{}()'.format(key))
+            hoja['{}{}'.format(value, fila + 1)] = eval('persona.get{}()'.format(key))
         self.planilla.save(self.nombreDePlanilla)
 
-    def buscarFila(self, hoja, apellido):
-        for row in hoja.rows:
-            if row[4].value == "ABC":
-                for cell in row:
-                    print(cell.value, end=" ")
-                print()
     def close(self):
         self.planilla.save(self.nombreDePlanilla)
         self.planilla.close()
