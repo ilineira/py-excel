@@ -4,9 +4,9 @@ from src.entidades.Persona import Persona
 
 class CargadorAExcel:
 
-    def __init__(self):
+    def __init__(self, rutaAArchivo):
         self.continuar = True
-        self.workbook = Workbook('/Users/ilineira/PycharmProjects/py-excel/output/outputCausa122692020.xlsx')
+        self.workbook = Workbook(rutaAArchivo)
 
     def run(self):
         while self.continuar:
